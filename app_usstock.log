@@ -7384,3 +7384,399 @@ Find:{},Field:{},Sort:['pbdt']
 {'peers_performance': {'videoPath': 'US/mp3_hourly/peers_performance_CRM_1603807237.mp4', 'comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於較差。相對於市盈率而言，賽富時雲端科技屬於較好。', 'chartPath': 'US/mp3_
  --htmlPage:index.html
 127.0.0.1 - - [27/Oct/2020 10:24:37] "[37mGET / HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 11:27:59] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+===START show_page request:<Request 'http://localhost:5011/' [GET]>
+===request GET Input:
+ {} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{}
+ --pathname:index
+ --funcName:page_index
+ --FuncObj:<function page_index at 0x7eff8bedaf28>
+ --show_page page_index INPUT/opts:
+{}
+===page_api INPUT:
+ {'outTF': False, 'output': 'dict', 'debugTF': True, 'topic': 'hourly', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': None, 'src': 'iex', 'topic': 'hourly', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING hourly_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': None, 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'topic': 'hourly'} 
+None {'debugTF': True, 'outTF': False, 'instrument': 'stock', 'src': 'iex'} 
+===hourly_comment():
+Find:{},Field:{},Sort:['pbdt']
+ 
+ --tkLst: [],fdLst: * 
+ --from tablename: mkt_briefing_media 
+ --DF:
+[{'mktidx_performance': {'askSize': 0, 'fullExchangeName': 'SNP', 'chartPath': 'US/mp3_hourly/mktidx_performance_GSPC_1603810838.svg', 'priceHint': 2, 'changePercent': 0.10614934, 'sector': 'Ma
+ 
+ --alanapi OUTPUT:
+[{'mktidx_performance': {'askSize': 0, 'fullExchangeName': 'S
+===page_api type_data:<class 'list'>,type_dd:<class 'list'>, OUTPUT_dd:
+[{'mktidx_performance': {'as 
+ 
+ --After run funcName:page_index,type:<class 'dict'>
+ --show_page OUTPUT:
+{'peers_performance': {'videoPath': 'US/mp3_hourly/peers_performance_CRM_1603810838.mp4', 'comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於中下。相對於市盈率而言，賽富時雲端科技屬於較好。', 'chartPath': 'US/mp3_
+ --htmlPage:index.html
+127.0.0.1 - - [27/Oct/2020 11:47:14] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:27] "[37mGET /US/mp3_hourly/earnings_performance_CRM_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:27] "[37mGET /US/mp3_hourly/peers_performance_CRM_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:32] "[37mGET /US/mp3_hourly/etf_performance_XLK_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:42] "[37mGET /US/mp3_hourly/daily_conclusion_GSPC_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:46] "[37mGET /US/mp3_hourly/intraday_headline_GSPC_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:46] "[37mGET /US/mp3_hourly/stock_performance_CRM_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:46] "[37mGET /css/fonts.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:47:46] "[37mGET /js/dropdowns-enhancement.min.js HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 11:48:29] "[37mGET /videos/daily_briefing_1603742504_ALL.mp4 HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 11:55:00] "[33mGET /so_products_iplat2.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 12:44:50] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 12:44:51] "[33mGET /contact.htm HTTP/1.0[0m" 404 -
+127.0.0.1 - - [27/Oct/2020 12:48:24] "[37mGET /css/styles.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:24] "[37mGET /css/dropdowns-enhancement.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:24] "[37mGET /js/dropdowns-enhancement.min.js HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:25] "[37mGET /videos/intraday_briefing_1603810838_ALL.mp4 HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:25] "[37mGET /US/mp3_hourly/daily_mostactive_AMD_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:25] "[37mGET /US/mp3_hourly/daily_peers_CRM_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:25] "[37mGET /US/mp3_hourly/mktidx_performance_GSPC_1603810838.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 12:48:25] "[37mGET /fonts/glyphicons-halflings-regular.woff HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 12:56:18] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+===START show_page request:<Request 'http://localhost:5011/portfolio?topic=theme&subtopic=ipo' [GET]>
+===request GET Input:
+ {'subtopic': 'ipo', 'topic': 'theme'} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{'topic': 'theme', 'subtopic': 'ipo'}
+ --pathname:portfolio
+ --funcName:page_portfolio
+ --FuncObj:<function page_portfolio at 0x7eff8bedd268>
+ --show_page page_portfolio INPUT/opts:
+{'topic': 'theme', 'subtopic': 'ipo'}
+===page_api INPUT:
+ {'debugTF': True, 'outTF': False, 'subtopic': 'ipo', 'topic': 'theme', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': 'ipo', 'src': 'iex', 'topic': 'theme', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': None, 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING theme_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': 'ipo', 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': None, 'topic': 'theme'} 
+===RUNNING topic_theme_ipo with OPTS:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': None, 'topic': 'theme'}
+ --dfTF:True,<function topic_theme_ipo at 0x7eff8beddc80>,funcArg:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'funcName': 'topic_theme_ipo', 'subtopic': 'ipo', 'src': 'iex', 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': None, 'topic': 'theme'} @run_topic_theme() 
+==OPTS:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': None, 'topic': 'theme'},FIELDS:*, DATA:
+    ticker  ...             pubDate
+579  SXTC   ... 2020-08-06 14:30:44
+580  MDJH   ... 2020-08-06 14:31:20
+
+[2 rows x 13 columns] --alanapi OUTPUT:
+    ticker  ...             pubDate
+0    GHSI   ... 2020-10-2
+===page_api type_data:<class 'pandas.core.frame.DataFrame'>,type_dd:<class 'pandas.core.frame.DataFr 
+ 
+ --After run funcName:page_portfolio,type:<class 'str'>
+ --show_page OUTPUT:
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ticker</th>
+      <th>ipoDate</th>
+      <th>marketCap</th>
+      <th>ipoPrice</th>
+  
+ --htmlPage:portfolio.html
+ --processing page:portfolio.html:opts:
+{'datetime': <module 'datetime' from '/usr/lib/python3.5/datetime.py'>, 'subtopic': 'ipo', 'topic': 'theme', 'pd': <module 'pandas' from '/usr/local/lib/python3.5/dist-packages/pandas/__init__.py'>, 's2dt': <function s2dt at 0x7efff78889d8>}
+127.0.0.1 - - [27/Oct/2020 12:56:20] "[37mGET /portfolio?topic=theme&subtopic=ipo HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 13:28:18] "[33mGET /fistarHelp/WebHelp/applications/admin_station/repo_specials/repo_specials.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 13:43:40] "[33mGET /fistarHelp/WebHelp/introduction/about_fi-star_%28introduction%29.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 13:48:29] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+127.0.0.1 - - [27/Oct/2020 13:48:29] "[36mGET /videos/daily_briefing_1603483309_ALL.mp4 HTTP/1.0[0m" 304 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 13:53:54] "[33mGET /so_products_fin_bi.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 13:56:42] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+===START show_page request:<Request 'http://localhost:5011/index' [GET]>
+===request GET Input:
+ {} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{}
+ --pathname:index
+ --funcName:page_index
+ --FuncObj:<function page_index at 0x7eff8bedaf28>
+ --show_page page_index INPUT/opts:
+{}
+===page_api INPUT:
+ {'outTF': False, 'output': 'dict', 'debugTF': True, 'topic': 'hourly', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': None, 'src': 'iex', 'topic': 'hourly', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING hourly_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': None, 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'topic': 'hourly'} 
+None {'debugTF': True, 'outTF': False, 'instrument': 'stock', 'src': 'iex'} 
+===hourly_comment():
+Find:{},Field:{},Sort:['pbdt']
+ 
+ --tkLst: [],fdLst: * 
+ --from tablename: mkt_briefing_media 
+ --DF:
+[{'mktidx_performance': {'sector': 'Market Index', 'fullExchangeName': 'SNP', 'comment': '標普500指數已經小幅微升0.11%來到3405。', 'chartPath': 'US/mp3_hourly/mktidx_performance_GSPC_1603818042.svg', 'fifty
+ 
+ --alanapi OUTPUT:
+[{'mktidx_performance': {'sector': 'Market Index', 'fullExcha
+===page_api type_data:<class 'list'>,type_dd:<class 'list'>, OUTPUT_dd:
+[{'mktidx_performance': {'se 
+ 
+ --After run funcName:page_index,type:<class 'dict'>
+ --show_page OUTPUT:
+{'peers_performance': {'chartpath': 'US/mp3_hourly/peers_performance_CRM_1603818042.svg', 'mp3comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於較差。相對於市盈率而言，賽富時雲端科技屬於較好。', 'chartPath': 'US/m
+ --htmlPage:index.html
+127.0.0.1 - - [27/Oct/2020 13:56:42] "[37mGET /index HTTP/1.0[0m" 200 -
+===START show_page request:<Request 'http://localhost:5011/' [GET]>
+===request GET Input:
+ {} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{}
+ --pathname:index
+ --funcName:page_index
+ --FuncObj:<function page_index at 0x7eff8bedaf28>
+ --show_page page_index INPUT/opts:
+{}
+===page_api INPUT:
+ {'outTF': False, 'output': 'dict', 'debugTF': True, 'topic': 'hourly', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': None, 'src': 'iex', 'topic': 'hourly', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING hourly_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': None, 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'topic': 'hourly'} 
+None {'debugTF': True, 'outTF': False, 'instrument': 'stock', 'src': 'iex'} 
+===hourly_comment():
+Find:{},Field:{},Sort:['pbdt']
+ 
+ --tkLst: [],fdLst: * 
+ --from tablename: mkt_briefing_media 
+ --DF:
+[{'mktidx_performance': {'sector': 'Market Index', 'comment': '標普500指數已經微漲0.11%來到3405。', 'chartPath': 'US/mp3_hourly/mktidx_performance_GSPC_1603821645.svg', 'fiftyTwoWeekHighChangePercent': -0
+ 
+ --alanapi OUTPUT:
+[{'mktidx_performance': {'sector': 'Market Index', 'comment':
+===page_api type_data:<class 'list'>,type_dd:<class 'list'>, OUTPUT_dd:
+[{'mktidx_performance': {'se 
+ 
+ --After run funcName:page_index,type:<class 'dict'>
+ --show_page OUTPUT:
+{'peers_performance': {'chartpath': 'US/mp3_hourly/peers_performance_CRM_1603821645.svg', 'mp3comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於中下。相對於市盈率而言，賽富時雲端科技屬於較好。', 'chartPath': 'US/m
+ --htmlPage:index.html
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /css/dropdowns-enhancement.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /css/styles.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /css/fonts.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /js/dropdowns-enhancement.min.js HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /favicon.ico HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /images/logo_powersmall.gif HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /US/mp3_hourly/peers_performance_CRM_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /US/mp3_hourly/etf_performance_XLK_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /US/mp3_hourly/daily_peers_CRM_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /US/mp3_hourly/daily_mostactive_AMD_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /US/mp3_hourly/earnings_performance_CRM_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:25] "[37mGET /US/mp3_hourly/mktidx_performance_GSPC_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /US/mp3_hourly/intraday_headline_GSPC_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /US/mp3_hourly/daily_conclusion_GSPC_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /US/mp3_hourly/stock_performance_CRM_1603821645.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /fonts/glyphicons-halflings-regular.woff HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /videos/intraday_briefing_1603821645_ALL.mp4 HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /videos/intraday_briefing_1603821645_ALL.mp4 HTTP/1.0[0m" 206 -
+127.0.0.1 - - [27/Oct/2020 14:06:26] "[37mGET /videos/intraday_briefing_1603821645_ALL.mp4 HTTP/1.0[0m" 206 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 14:14:22] "[33mGET /fistarHelp/WebHelp/how_to/transfer_from_current_market.htm HTTP/1.0[0m" 404 -
+127.0.0.1 - - [27/Oct/2020 14:19:28] "[37mGET /images/iplatfor.gif HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 14:21:28] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 14:42:53] "[33mGET /fistarHelp/WebHelp/glossary/z.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 14:42:57] "[33mGET /fistarHelp/WebHelp/how_to/enter_multiple_new_trades_via_transfer.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 14:47:54] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 14:47:54] "[33mGET /demo/lsdemo.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 15:04:31] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+===START show_page request:<Request 'http://localhost:5011/' [GET]>
+===request GET Input:
+ {} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{}
+ --pathname:index
+ --funcName:page_index
+ --FuncObj:<function page_index at 0x7eff8bedaf28>
+ --show_page page_index INPUT/opts:
+{}
+===page_api INPUT:
+ {'outTF': False, 'output': 'dict', 'debugTF': True, 'topic': 'hourly', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': None, 'src': 'iex', 'topic': 'hourly', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING hourly_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': None, 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'topic': 'hourly'} 
+None {'debugTF': True, 'outTF': False, 'instrument': 'stock', 'src': 'iex'} 
+===hourly_comment():
+Find:{},Field:{},Sort:['pbdt']
+ 
+ --tkLst: [],fdLst: * 
+ --from tablename: mkt_briefing_media 
+ --DF:
+[{'mktidx_performance': {'askSize': 0, 'comment': '標普500指數已經微漲0.11%來到3405。', 'chartPath': 'US/mp3_hourly/mktidx_performance_GSPC_1603825246.svg', 'tmplname': 'mktidx_performance', 'changePercen
+ 
+ --alanapi OUTPUT:
+[{'mktidx_performance': {'askSize': 0, 'comment': '標普500指數已經微
+===page_api type_data:<class 'list'>,type_dd:<class 'list'>, OUTPUT_dd:
+[{'mktidx_performance': {'as 
+ 
+ --After run funcName:page_index,type:<class 'dict'>
+ --show_page OUTPUT:
+{'peers_performance': {'chartpath': 'US/mp3_hourly/peers_performance_CRM_1603825246.svg', 'comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於較差。相對於市盈率而言，賽富時雲端科技屬於中上。', 'chartPath': 'US/mp3_
+ --htmlPage:index.html
+127.0.0.1 - - [27/Oct/2020 15:04:31] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:34] "[37mGET /css/fonts.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:35] "[37mGET /js/dropdowns-enhancement.min.js HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:35] "[37mGET /US/mp3_hourly/daily_mostactive_AMD_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:36] "[37mGET /US/mp3_hourly/stock_performance_CRM_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:36] "[37mGET /US/mp3_hourly/mktidx_performance_GSPC_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:37] "[37mGET /US/mp3_hourly/earnings_performance_CRM_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:37] "[37mGET /US/mp3_hourly/daily_conclusion_GSPC_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:37] "[37mGET /US/mp3_hourly/etf_performance_XLK_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:38] "[37mGET /US/mp3_hourly/daily_peers_CRM_1603825246.svg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [27/Oct/2020 15:04:38] "[37mGET /US/mp3_hourly/peers_performance_CRM_1603825246.svg HTTP/1.0[0m" 200 -
+===START show_page request:<Request 'http://localhost:5011/' [GET]>
+===request GET Input:
+ {} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{}
+ --pathname:index
+ --funcName:page_index
+ --FuncObj:<function page_index at 0x7eff8bedaf28>
+ --show_page page_index INPUT/opts:
+{}
+===page_api INPUT:
+ {'outTF': False, 'output': 'dict', 'debugTF': True, 'topic': 'hourly', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': None, 'src': 'iex', 'topic': 'hourly', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING hourly_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': None, 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'topic': 'hourly'} 
+None {'debugTF': True, 'outTF': False, 'instrument': 'stock', 'src': 'iex'} 
+===hourly_comment():
+Find:{},Field:{},Sort:['pbdt']
+ 
+ --tkLst: [],fdLst: * 
+ --from tablename: mkt_briefing_media 
+ --DF:
+[{'mktidx_performance': {'askSize': 0, 'comment': '標普500指數已經微漲0.11%來到3405。', 'chartPath': 'US/mp3_hourly/mktidx_performance_GSPC_1603825246.svg', 'tmplname': 'mktidx_performance', 'changePercen
+ 
+ --alanapi OUTPUT:
+[{'mktidx_performance': {'askSize': 0, 'comment': '標普500指數已經微
+===page_api type_data:<class 'list'>,type_dd:<class 'list'>, OUTPUT_dd:
+[{'mktidx_performance': {'as 
+ 
+ --After run funcName:page_index,type:<class 'dict'>
+ --show_page OUTPUT:
+{'peers_performance': {'chartpath': 'US/mp3_hourly/peers_performance_CRM_1603825246.svg', 'comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於較差。相對於市盈率而言，賽富時雲端科技屬於中上。', 'chartPath': 'US/mp3_
+ --htmlPage:index.html
+127.0.0.1 - - [27/Oct/2020 15:23:11] "[37mGET / HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 15:27:39] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 15:27:39] "[33mGET /fistarHelp/WebHelp/applications/admin_station/user_info/add_user.htm HTTP/1.0[0m" 404 -
+===START show_page request:<Request 'http://localhost:5011/' [GET]>
+===request GET Input:
+ {} 
+===request Post Input:
+ None ImmutableMultiDict([]) 
+===request cookies user:None 
+ --opts:{}
+ --pathname:index
+ --funcName:page_index
+ --FuncObj:<function page_index at 0x7eff8bedaf28>
+ --show_page page_index INPUT/opts:
+{}
+===page_api INPUT:
+ {'outTF': False, 'output': 'dict', 'debugTF': True, 'topic': 'hourly', 'search': 'comment'} 
+ --alanapi INPUT:
+{'dbname': 'ara', 'subtopic': None, 'src': 'iex', 'topic': 'hourly', 'debugTF': True, 'instrument': 'stock', 'tablename': None, 'outTF': False, 'lang': 'en', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'search': 'comment'}
+ --- search_comment [], instrument:stock, tablename:None
+ 
+==RUNNING hourly_comment() Inputs:{'debugTF': True, 'instrument': 'stock', 'tablename': None, 'dbname': 'ara', 'outTF': False, 'subtopic': None, 'lang': 'en', 'src': 'iex', 'hostname': 'localhost', 'start': None, 'end': None, 'output': 'dict', 'topic': 'hourly'} 
+None {'debugTF': True, 'outTF': False, 'instrument': 'stock', 'src': 'iex'} 
+===hourly_comment():
+Find:{},Field:{},Sort:['pbdt']
+ 
+ --tkLst: [],fdLst: * 
+ --from tablename: mkt_briefing_media 
+ --DF:
+[{'mktidx_performance': {'askSize': 0, 'comment': '標普500指數已經微漲0.11%來到3405。', 'chartPath': 'US/mp3_hourly/mktidx_performance_GSPC_1603825246.svg', 'tmplname': 'mktidx_performance', 'changePercen
+ 
+ --alanapi OUTPUT:
+[{'mktidx_performance': {'askSize': 0, 'comment': '標普500指數已經微
+===page_api type_data:<class 'list'>,type_dd:<class 'list'>, OUTPUT_dd:
+[{'mktidx_performance': {'as 
+ 
+ --After run funcName:page_index,type:<class 'dict'>
+ --show_page OUTPUT:
+{'peers_performance': {'chartpath': 'US/mp3_hourly/peers_performance_CRM_1603825246.svg', 'comment': '  與其相關個股比較，賽富時雲端科技在今天的漲跌表現中處於較差。相對於市盈率而言，賽富時雲端科技屬於中上。', 'chartPath': 'US/mp3_
+ --htmlPage:index.html
+127.0.0.1 - - [27/Oct/2020 15:29:12] "[37mGET / HTTP/1.0[0m" 200 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 15:43:18] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 15:50:56] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 15:51:00] "[33mGET /fistarHelp/WebHelp/Menu_Items/Edit/Edit_Menu.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 16:05:29] "[33mGET /fistarHelp/WebHelp/applications/trading_system_overview.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 16:07:34] "[33mGET /fistarHelp/WebHelp/how_to/delete_a_security.htm HTTP/1.0[0m" 404 -
+==error:<class 'werkzeug.exceptions.NotFound'>
+404:Not Found:The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+127.0.0.1 - - [27/Oct/2020 17:07:45] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
