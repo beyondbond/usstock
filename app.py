@@ -22,7 +22,8 @@ from sqlalchemy import create_engine
 pguri = 'postgresql://sfdbo@localhost:5432/ara'
 pgDB = create_engine(pguri)
 
-sys.path.append("/apps/fafa/pyx/alan/")
+#sys.path.append("/apps/fafa/pyx/alan/")
+sys.path.append("src/")
 from _alan_rmc import display_page
 
 @app.route('/favicon.ico') 
