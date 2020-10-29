@@ -48,7 +48,7 @@ def bb_predefined(scrIds='most_actives',dbname='ara',saveDB=True,mappingTF=True,
 		df,_,_ = find_mdb(dbname=dbname,tablename=tablename,dfTF=True)
 		if len(df)>0 and 'pbdt' in df:
 			t1=df['pbdt'].iloc[0]
-			mmPassed=pd.Timedelta(cdt - t1).seconds / 60.0
+			mmPassed=pd.Timedelta(cdt - t1).total_seconds() / 60.0
 			if mmPassed>mmGap: # check if DB info is winthin last 'mmGap' (30-minute)
 				df=[]
 		else:

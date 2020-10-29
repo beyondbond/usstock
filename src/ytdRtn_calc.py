@@ -122,7 +122,7 @@ def ytdOTF(funcArg,**optx):
 	return retObj
 
 def renewChk(pbdtCurr,pbdtMod,deltaTolerance=86400):
-	deltaPassed=pd.Timedelta(pbdtCurr - pbdtMod).seconds
+	deltaPassed=pd.Timedelta(pbdtCurr - pbdtMod).total_seconds()
 	sys.stderr.write(" --curr:{},last:{}:deltaPassed:{}\n".format(pbdtCurr,pbdtMod,deltaPassed))
 	return deltaPassed>deltaTolerance
 

@@ -5,12 +5,13 @@ Usage of:
 python3 _alan_mp4.py daily_briefing --extra_xs="txtOnly=True"
 python3 _alan_mp4.py intraday_briefing --extra_xs="txtOnly=True"
 OR
-python3 _alan_mp4.py daily_single_stock MDB --extra_xs="txtOnly=True"
+python3 _alan_mp4.py daily_single_stock MDB --extra_xs="txtOnly=True;deltaTolerance=43200"
+OR
+python3 _alan_mp4.py daily_single_stock MDB 1
 
 Description: mp4 factory
-Version: 0.8
-Last mod., 
-Fri Apr 24 14:02:50 EDT 2020
+Version: 0.9
+Last mod., Thu Oct 29 13:19:52 EDT 2020
 """
 import sys,os
 import re
@@ -19,7 +20,7 @@ from glob import glob
 import numpy as np
 import pandas as pd
 from _alan_calc import getKeyVal,subDict,saferun
-from _alan_str import jj_fmt,insert_mdb,upsert_mdb,write2mdb
+from _alan_str import jj_fmt,upsert_mdb,find_mdb
 from srt_convert import generateSubtitle
 from subprocess import Popen,PIPE
 import datetime
@@ -166,29 +167,54 @@ def saveBriefing(_pn_,tablename="mkt_briefing_details",zpk=['category','template
 		if 'comment' not in _pn_:
 			ret = "\n".join(fx(_pn_,'comment'))
 			_pn_.update(comment=ret)
-		if 'm3comment' not in _pn_:
-			m3ret = "\n".join(fx(_pn_,'m3comment'))
+		if 'mp3comment' not in _pn_:
+			m3ret = "\n".join(fx(_pn_,'mp3comment'))
 			_pn_.update(m3comment=m3ret)
 		ret,_,emsg = upsert_mdb([_pn_],zpk=zpk,dbname='ara',tablename=tablename,ordered=False)
-		#ret,_,emsg = write2mdb([_pn_],zpk=zpk,dbname='ara',tablename=tablename)
 		sys.stderr.write("==errmsg:SAVE TO {}:{} {}\n".format(tablename,_pn_['pbdt'],str(emsg)))
 	except Exception as e:
 		sys.stderr.write("**ERROR:INSERT INTO {}: {} of _pn_:\n{}\n".format(tablename,str(e),_pn_))
 	return _pn_
+
 @saferun
 def tmpl2mp4(ts='',category='ItD',title='intraday_briefing',datax={},debugTF=False,_pn_={},**optx):
-	
-	txtOnly=getKeyVal(optx,'txtOnly',False)
-	rptTxt = dat2rptTxt(ts=ts,_pn_=_pn_,debugTF=debugTF,**optx)
-	zpk = ['category','templateName','rpt_time','lang']
+	'''
+	Create comment, mp3comment based on 'title' and svg and 
+	save them into into MDB table: 'mkt_briefing_details' (for 'intraday_briefing' and 'daily_briefing')
+	or 'daily_single_stock' (for title='daily_single_stock') 
+	'''
+
 	if title[-9:]=='_briefing':
-		sys.stderr.write("==SAVE to {}\n".format(title+'.details'))
-		saveBriefing(_pn_,zpk=zpk)
+		tablename="mkt_briefing_details"
+		rptTxt = dat2rptTxt(ts=ts,_pn_=_pn_,debugTF=debugTF,**optx)
+		zpk = ['category','templateName','rpt_time','lang']
+		sys.stderr.write("==SAVE {} to MDB table:{}\n".format(title,tablename))
 	elif title=='daily_single_stock':
+		dbname='ara'
+		tablename=title
+		deltaTolerance= optx.pop('deltaTolerance',43200)
+		ticker=getKeyVal(optx,'ticker','')
+		o,m,e=find_mdb(dict(ticker=ticker),dbname=dbname,tablename=tablename,sortLst=['pbdt'])
+		if len(o)>0 and 'pbdt' in o[0]:
+			pbdtMod=o[0]['pbdt']
+			deltaPassed=int(pd.Timedelta(pd.datetime.now()-pbdtMod).total_seconds())
+			if deltaPassed<=deltaTolerance:
+				sys.stderr.write(" --pbdtMod:{},deltaPassed:{},deltaTolerance:{}\n".format(pbdtMod,deltaPassed,deltaTolerance))
+				sys.stderr.write(" --Directly use comment from table: {}\n".format(tablename))
+				return o[0]
+		rptTxt = dat2rptTxt(ts=ts,_pn_=_pn_,debugTF=debugTF,**optx)
 		_pn_['headTitle']=_pn_['stock_performance']['comment'];
 		ticker=_pn_['ticker']=_pn_['stock_performance']['ticker'];
-		sys.stderr.write("==SAVE {} to {}\n".format(ticker,title))
-		saveBriefing(_pn_,tablename=title,zpk=zpk+['ticker'])
+		_pn_['category']=category
+		_pn_['templateName']=title
+		_pn_['pbdt']=_pn_['stock_performance']['pbdt'];
+		_pn_['lang']=getKeyVal(optx,'lang','cn')
+		zpk=['ticker']
+		sys.stderr.write("==SAVE {}:{} to MDB table:{}\n".format(title,ticker,tablename))
+	else:
+		return {}
+	_pn_.update(title=title)
+	saveBriefing(_pn_,tablename=tablename,zpk=zpk)
 	if debugTF:
 		sys.stderr.write("=====ts:\n{}\n".format(ts))
 		sys.stderr.write("=====optx:\n{}\n".format(optx))
@@ -204,10 +230,24 @@ def tmpl2mp4(ts='',category='ItD',title='intraday_briefing',datax={},debugTF=Fal
 	else:
 		sys.stderr.write("*ERROR:tmplLst not found in {}\n".format(_pn_.keys()))
 		return {}
+	txtOnly=optx.pop('txtOnly',False)
 	if txtOnly is True:
 		sys.stderr.write("=====RUN Text Only: {}\n".format(txtOnly))
 		return _pn_
-	dpn=subDict(_pn_,zpk+['pbdt','headTitle','intraday_headline','daily_headline','comment','mp3comment'])
+	sys.stderr.write("=====RUN pn2mp4: {}\n".format(tmplLst))
+	dpn = pn2mp4(_pn_=_pn_,zpk=zpk,**optx)
+	return dpn
+
+def pn2mp4(_pn_={},zpk=[],debugTF=False,**optx):
+	'''
+	convert _pn_ that contail svg, comment, mp3comment into relevant mp3 and mp4 files
+	and save file locations and save to MDB table: 'mkt_briefing_media' or 'daily_single_stock_media' 
+	'''
+	if 'tmplLst' not in _pn_:
+		return {}
+	tmplLst = _pn_['tmplLst']
+	title = _pn_['title']
+	dpn=subDict(_pn_,zpk+['title','pbdt','headTitle','intraday_headline','daily_headline','comment','mp3comment'])
 	videoLst=[]
 	j=0
 	for tname in tmplLst:
@@ -245,22 +285,32 @@ def tmpl2mp4(ts='',category='ItD',title='intraday_briefing',datax={},debugTF=Fal
 	sys.stderr.write("===Total:{}: {}\n".format(j,videoLst))
 	try:
 		xpoch = mpname.split("_")[-1]
-		videoPath='{}_{}_ALL.mp4'.format(title,xpoch)
+		if title=='daily_single_stock':
+			ticker = getKeyVal(_pn_,'ticker',None)
+			videoPath='{}_{}_{}_ALL.mp4'.format(title,ticker,xpoch)
+		else:
+			videoPath='{}_{}_ALL.mp4'.format(title,xpoch)
 		run_concat(videoLst=videoLst,outdir=outdir,videoPath=videoPath)
 		#dpn.update(comment=rptTxt)
-		dpn.update(title=title,videoPath=videoPath)
+		dpn.update(videoPath=videoPath)
 		sys.stderr.write("===Combine: {} To {}\n".format(videoLst,videoPath))
 		if len(glob(outdir+"/"+videoPath))>0:
 			sys.stderr.write("===videoLst: {}\n".format(videoLst))
 			sys.stderr.write("===videopath: {} successfully created!\n".format(videoPath))
 		else:
 			sys.stderr.write("**ERROR: {} not created!\n".format(videoPath))
+
+		# save to MDB 'dbname'::'tablename'
+		dbname=optx.pop('dbname','ara')
+		tablename=optx.pop('tablename','')
 		if title[-9:]=='_briefing':
-			dbname='ara';tablename='mkt_briefing_media'
+			tablename='mkt_briefing_media'
+		elif title=='daily_single_stock':
+			tablename=title+'_media'
+		if len(tablename)>5:
 			ret,_,emsg = upsert_mdb([dpn],zpk=zpk,dbname=dbname,tablename=tablename,ordered=False)
 			sys.stderr.write("==errmsg:SAVE TO {} @ {}, STATUS:{}\n".format(tablename,dpn['pbdt'],str(emsg)))
-			#ret,_,emsg = write2mdb(dpn,zpk=zpk,dbname=dbname,tablename=tablename)
-			#saveBriefing(dpn,tablename='mkt_briefing_media')
+	
 		sys.stderr.write("==SUCCESS videoLst:{}, mp4:{}\n".format(videoLst,mpname))
 	except Exception as e:
 		sys.stderr.write("**ERROR: @ {}:{}\n\t{}\n".format(videoLst,mpname,str(e)))

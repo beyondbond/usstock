@@ -223,7 +223,7 @@ def rerun_dss(ticker=''):
 		if myproc.poll() != None:
 			sys.stderr.write("**WARNING: {} not running\n".format(xcmd))
 		else:
-			sys.stderr.write("==GOOG: {} still running\n".format(xcmd))
+			sys.stderr.write("=={}: {} still running\n".format(ticker,xcmd))
 		return json.dumps(dict(err="Analysis will be available shortly.",err_code=304))
 	except Exception as e:
 		sys.stderr.write("**WARNING: {} on {}\n".format(str(e),xcmd))

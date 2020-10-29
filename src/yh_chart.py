@@ -115,7 +115,7 @@ def useWeb(jobj={'ticker':'^GSPC'},colx='pbdt',dbname='ara',tablename='yh_quote_
 	if len(dc)<1:
 		return True
 	pdt=dc[colx]
-	mmPassed=pd.Timedelta(cdt - pdt).seconds / 60.0
+	mmPassed=pd.Timedelta(cdt - pdt).total_seconds() / 60.0
 	webTF = mmPassed>mmGap
 	if debugTF is True:
 		sys.stderr.write("{}|{}|{}|{}|{}\n".format("webTF","cdt","pdt","mmPassed","mmGap"))
@@ -779,7 +779,7 @@ def func2mdb(tkLst,tablename='yh_spark_hist',dbname='ara',funcN='yh_hist_query',
 		sys.stderr.write("**ERROR: {}:{}\n".format("func2mdb()",str(e)))
 	return df	
 def renewChk(pbdtCurr,pbdtMod,deltaTolerance=86400):
-	deltaPassed=pd.Timedelta(pbdtCurr - pbdtMod).seconds
+	deltaPassed=pd.Timedelta(pbdtCurr - pbdtMod).total_seconds()
 	sys.stderr.write(" --curr:{},last:{}:deltaPassed:{}\n".format(pbdtCurr,pbdtMod,deltaPassed))
 	return deltaPassed>deltaTolerance
 
@@ -843,7 +843,7 @@ def runOTF(funcArg,ticker='',tableChk='',zpkChk=["ticker"],deltaTolerance=43200,
 	renewTF,objChk,clientM = lastRunChk(objChk=objChk,tableChk=tableChk,deltaTolerance=deltaTolerance,**optx)
 	if renewTF:
 		sys.stderr.write("==Data outdated or never run, Running:{}\n".format(funcArg))
-		retObj = funcArg(ticker,**optx)
+		retObj = funcArg(ticker=ticker,**optx)
 		if len(retObj)<1:
 			return []
 

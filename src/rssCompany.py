@@ -48,7 +48,7 @@ def load_rssCompany(ticker='',**optx):
 	return ret
 
 def renewChk(currDt,lastModDt,deltaTolerance=86400):
-	deltaPassed=pd.Timedelta(currDt - lastModDt).seconds
+	deltaPassed=pd.Timedelta(currDt - lastModDt).total_seconds()
 	sys.stderr.write(" --curr:{},last:{}:deltaPassed:{}\n".format(currDt,lastModDt,deltaPassed))
 	return deltaPassed>deltaTolerance
 
